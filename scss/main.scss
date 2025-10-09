@@ -1,0 +1,11 @@
+// main.scss
+@import "base/ress";
+@import "utils/vendors";
+@import "layout/header";
+@import "layout/section";
+@import "layout/footer";
+@import "components/button";
+
+body {
+  background-color: $bg-color;
+}

@@ -1,0 +1,114 @@
+/* base/_ress.scss */
+/* Box sizing */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  word-break: normal;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  text-decoration: inherit;
+  vertical-align: baseline;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Reset headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Reset links */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+/* Reset form elements */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove spin buttons on number inputs (Chrome, Safari) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove focus outline (optional) */
+:focus {
+  outline: none;
+}
+
+/* Images */
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Other common resets */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 1em 0;
+}
+
+body {
+  background-color: lightyellow;
+}
+
+header {
+  background-color: #f6c200;
+}
+
+body {
+  background-color: #faf5e6;
+}/*# sourceMappingURL=main.css.map */
