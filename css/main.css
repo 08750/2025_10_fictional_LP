@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* base/_ress.scss */
 /* Box sizing */
 html {
@@ -106,11 +105,54 @@ header {
   background-color: #f6c200;
 }
 
-.header {
+.header-logo img {
+  display: block;
+  height: auto;
+}
+
+.header-logo {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  margin-right: 16px;
   display: flex;
-  align-items: center; /* 縦方向の中央揃え */
-  justify-content: space-between; /* 左右に余白を入れてバランス良く配置 */
-  padding: 10px 20px; /* お好みで余白調整 */
+  align-items: center;
+  justify-content: center;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  width: 1280px;
+  height: 169px;
+}
+
+.header-title h1 {
+  white-space: nowrap;
+  font-size: 36px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: normal;
+  margin: 0%;
+  padding-right: 140px;
+}
+
+.header-nav {
+  display: flex;
+}
+.header-nav a {
+  white-space: nowrap;
+  font-size: 36px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: normal;
+  margin: 0%;
+}
+.header-nav li {
+  border-right: 2px solid #000000;
+  padding: 2px 8px;
+}
+.header-nav li:last-child {
+  border-right: none;
 }
 
 body {

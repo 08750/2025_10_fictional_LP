@@ -1,10 +1,54 @@
 header {
   background-color: $header-footer-color;
 }
+.header-logo img {
+  display: block;
+  height: auto;
+}
 
-.header {
+.header-logo {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  margin-right: 16px; // ← テキストとの間を調整
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+  justify-content: center;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  width: 1280px;
+  height: 169px;
+}
+
+.header-title h1 {
+  white-space: nowrap;
+  font-size: 36px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: normal;
+  margin: 0%;
+  padding-right: 140px;
+}
+
+//ナビゲーション
+.header-nav {
+  display: flex;
+  a {
+    white-space: nowrap;
+    font-size: 36px;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: normal;
+    margin: 0%;
+  }
+
+  li {
+    border-right: 2px solid #000000;
+    padding: 2px 8px;
+    &:last-child {
+      border-right: none;
+    }
+  }
 }
