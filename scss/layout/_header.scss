@@ -1,17 +1,17 @@
 header {
   background-color: $header-footer-color;
+  font-family: #{$body-font};
 }
 .header-logo img {
   display: block;
   height: auto;
 }
-
 .header-logo {
-  width: 120px;
-  height: 120px;
-  min-width: 120px;
-  min-height: 120px;
-  margin-right: 16px; // ← テキストとの間を調整
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  margin-right: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,12 +22,13 @@ header {
   align-items: center;
   width: 1280px;
   height: 169px;
+  width: 100vw;
+  max-width: none;
 }
 
 .header-title h1 {
   white-space: nowrap;
   font-size: 36px;
-  font-family: "Zen Maru Gothic", sans-serif;
   font-weight: normal;
   margin: 0%;
   padding-right: 140px;
@@ -49,6 +50,41 @@ header {
     padding: 2px 8px;
     &:last-child {
       border-right: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header-wrapper {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .header-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+  }
+
+  .header-title h1 {
+    font-size: 24px;
+    padding-right: 0;
+    margin-bottom: 12px;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      font-size: 20px;
+    }
+
+    li {
+      border-right: none;
+      padding: 4px 0;
     }
   }
 }

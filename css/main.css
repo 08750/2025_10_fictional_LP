@@ -103,6 +103,7 @@ hr {
 
 header {
   background-color: #f6c200;
+  font-family: Zen Maru Gothic, sans-serif;
 }
 
 .header-logo img {
@@ -111,10 +112,10 @@ header {
 }
 
 .header-logo {
-  width: 120px;
-  height: 120px;
-  min-width: 120px;
-  min-height: 120px;
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
   margin-right: 16px;
   display: flex;
   align-items: center;
@@ -126,12 +127,13 @@ header {
   align-items: center;
   width: 1280px;
   height: 169px;
+  width: 100vw;
+  max-width: none;
 }
 
 .header-title h1 {
   white-space: nowrap;
   font-size: 36px;
-  font-family: "Zen Maru Gothic", sans-serif;
   font-weight: normal;
   margin: 0%;
   padding-right: 140px;
@@ -153,6 +155,109 @@ header {
 }
 .header-nav li:last-child {
   border-right: none;
+}
+
+@media (max-width: 768px) {
+  .header-wrapper {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    text-align: center;
+  }
+  .header-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+  }
+  .header-title h1 {
+    font-size: 24px;
+    padding-right: 0;
+    margin-bottom: 12px;
+  }
+  .header-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-nav a {
+    font-size: 20px;
+  }
+  .header-nav li {
+    border-right: none;
+    padding: 4px 0;
+  }
+}
+main {
+  font-family: Zen Maru Gothic, sans-serif;
+}
+
+.content01 {
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+}
+
+.content01 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.firstview_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.section_title {
+  white-space: nowrap;
+  font-size: 48px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin: 8px 0 0;
+}
+
+.concept {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 84px;
+}
+
+.concept-img {
+  padding: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 763px;
+  height: 763px;
+}
+
+.concept-title {
+  padding: 62px;
+}
+.concept-title h2 {
+  font-size: 48px;
+  white-space: nowrap;
+  color: #004955;
+  border-bottom: 4px solid #004955;
+}
+
+.concept-text {
+  white-space: normal;
+  word-break: break-word;
+  font-size: 24px;
+}
+
+.about-title {
+  font-size: 48px;
+  color: #004955;
 }
 
 body {
