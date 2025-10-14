@@ -264,12 +264,13 @@ main {
 
 .about-title {
   font-size: 48px;
-  color: #1a3557;
+  color: #333;
 }
 
 .about-line {
   width: 250px;
   height: 35px;
+  margin-bottom: 48px;
 }
 
 .about-line img {
@@ -288,6 +289,12 @@ body {
   position: relative;
   width: 100vw;
   overflow: hidden;
+}
+
+.about-title {
+  color: #1a3557;
+  font-size: 48px;
+  font-weight: 500;
 }
 
 .about-img {
@@ -309,23 +316,160 @@ body {
   bottom: 0;
   left: 0;
   width: 572px;
-  height: auto;
+  height: 248px;
   background-color: #fffef9;
-  padding: 20px;
+  padding: 50px;
   box-sizing: border-box;
-  z-index: 10;
+  opacity: 0.9;
+  text-align: center;
 }
 
 .frame-text h3 {
   margin: 0 0 10px;
   font-size: 28px;
   color: #333;
+  font-weight: 500;
 }
 
 .frame-text p {
   margin: 0;
   font-size: 20px;
   color: #1a3557;
+  font-weight: 500;
+}
+
+.frameleft-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 572px;
+  height: 248px;
+  background-color: #fffef9;
+  padding: 50px;
+  box-sizing: border-box;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.frameleft-text h3 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  color: #333;
+  font-weight: 500;
+}
+
+.frameleft-text p {
+  margin: 0;
+  font-size: 20px;
+  color: #1a3557;
+  font-weight: 500;
+}
+
+.onsen-title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 500;
+  color: #1a3557;
+}
+
+.onsen-line {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 35px;
+  margin: 0 auto 48px;
+  margin-bottom: 56px;
+}
+
+.onsen-line img {
+  width: 100%;
+  height: 100%;
+}
+
+.onsen-intro {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.onsen-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 53px;
+  justify-content: center;
+}
+
+.onsen-item {
+  text-align: center;
+  width: calc(50% - 27px);
+}
+
+.onsen-img img {
+  width: 524px;
+  height: 376px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 50px;
+}
+
+.onsen-img02 img {
+  width: 524px;
+  height: 376px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 50px;
+}
+
+.onsen-text {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #004955;
+  line-height: 1.6;
+}
+
+.onsen-subtitle {
+  font-size: 24px;
+  margin: 10px 0;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #004955;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+
+.onsen-subtitle {
+  font-size: 32px;
+  font-weight: 500;
+  display: inline-block;
+  color: #004955;
+}
+
+.onsen-text {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin: 30px 0;
+  line-height: 1.8;
+}
+
+.reviews {
+  text-align: center;
+}
+
+.reviews-line {
+  width: 250px;
+  height: 35px;
+  margin-bottom: 48px;
+  margin: 0 auto 48px auto;
+}
+
+.reviews-line img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 body {
