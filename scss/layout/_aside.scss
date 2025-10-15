@@ -1,0 +1,16 @@
+//ご利用案内ボタン
+.btn-wrapper {
+  text-align: center;
+}
+.bt {
+  display: inline-flex;
+  justify-content: center;
+  font-size: 48px;
+  font-family: $body-font;
+  text-decoration: none;
+  background-color: #d75a4a;
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 25px 123px;
+  margin: 0px;
+}
