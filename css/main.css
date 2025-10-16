@@ -134,6 +134,7 @@ header {
   height: 169px;
   padding: 0 40px 0 20px;
   box-sizing: border-box;
+  gap: 140px;
 }
 
 .header-left {
@@ -174,6 +175,7 @@ header {
     align-items: center;
     height: auto;
     padding: 16px;
+    gap: 0px;
   }
   .header-left {
     justify-content: center;
@@ -222,7 +224,7 @@ main {
 }
 
 .content01 img {
-  width: 50%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -557,6 +559,14 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .onsen-title {
+    font-size: 22px;
+  }
+  .onsen-line {
+    width: 145px;
+    height: 15px;
+    margin-bottom: 48px;
+  }
   .onsen-items {
     flex-direction: column;
     gap: 30px;
@@ -596,7 +606,7 @@ body {
 }
 
 .reviews-line {
-  width: 355px;
+  width: 300px;
   height: 35px;
   margin: 0 auto;
 }
@@ -718,7 +728,7 @@ footer {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0px;
+  gap: 20px;
 }
 
 .footer-header {
@@ -761,6 +771,11 @@ footer {
   color: white;
 }
 
+.footer-icon img {
+  width: 352px;
+  height: 79px;
+}
+
 .footer-copy {
   color: #1a3557;
   font-size: 20px;
@@ -774,12 +789,14 @@ footer {
     padding: 20px 10px;
   }
   .footer-header {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
   }
   .footer-logo {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
   .footer-title {
     font-size: 28px;
@@ -798,9 +815,8 @@ footer {
     margin-bottom: 20px;
   }
   .footer-icon img {
-    width: 40px;
-    height: auto;
-    margin-top: 10px;
+    width: 200px;
+    height: 50px;
   }
 }
 html,

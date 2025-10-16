@@ -15,7 +15,7 @@ main {
 }
 
 .content01 img {
-  width: 50%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -373,6 +373,14 @@ body {
 }
 ////////////温泉紹介レスポンシブ/////////////////
 @media screen and (max-width: 768px) {
+  .onsen-title {
+    font-size: 22px;
+  }
+  .onsen-line {
+    width: 145px;
+    height: 15px;
+    margin-bottom: 48px;
+  }
   .onsen-items {
     flex-direction: column;
     gap: 30px;
@@ -419,7 +427,7 @@ body {
 
 //デコレーションライン
 .reviews-line {
-  width: 355px;
+  width: 300px;
   height: 35px;
   margin: 0 auto;
 }
