@@ -7,6 +7,8 @@
     <meta name="description" content="温泉LP" />
     <!-- GoogleやYahooなどの検索エンジンに検索されなくなるメタタグ -->
     <meta name="robots" content="noindex,nofollow" />
+    <!-- レスポンシブ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
 
     <link
@@ -17,20 +19,24 @@
 
   <body>
     <!-- header -->
-    <header class="header-wrapper">
-      <div class="header-logo">
-        <img src="images/bigrogo02.png" alt="海の湯あかし汐風温泉のロゴ" />
+    <header class="header">
+      <div class="header-wrapper">
+        <div class="header-left">
+          <div class="header-logo">
+            <img src="images/bigrogo02.png" alt="海の湯あかし汐風温泉のロゴ" />
+          </div>
+          <div class="header-title"><h1>海の湯 あかし汐風温泉</h1></div>
+        </div>
+        <nav>
+          <ul class="header-nav">
+            <li><a href="#onsen">温泉</a></li>
+            <li><a href="#ganban">岩盤浴</a></li>
+            <li><a href="#food">料理</a></li>
+            <li><a href="#access">アクセス</a></li>
+            <li><a href="#access">予約</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="header-title"><h1>海の湯 あかし汐風温泉</h1></div>
-      <nav>
-        <ul class="header-nav">
-          <li><a href="#">温泉</a></li>
-          <li><a href="#">岩盤浴</a></li>
-          <li><a href="#">料理</a></li>
-          <li><a href="#">アクセス</a></li>
-          <li><a href="#">予約</a></li>
-        </ul>
-      </nav>
     </header>
 
     <!-- fristview -->
@@ -67,7 +73,7 @@
         <h2 class="about-title">施設紹介</h2>
         <div class="about-line"><img src="images/line02.png" alt="" /></div>
         <!-- 露天風呂 -->
-        <article class="about-item">
+        <article id="onsen" class="about-item">
           <div class="about-img">
             <img src="images/onsen01.png" alt="明石海峡を眺める人たちの写真" />
           </div>
@@ -79,7 +85,7 @@
           </div>
         </article>
         <!-- 温浴施設（サウナ・岩盤浴とか） -->
-        <article class="about-item">
+        <article id="ganban" class="about-item">
           <div class="about-img">
             <img src="images/ganban01.png" alt="岩盤浴の写真" />
           </div>
@@ -91,7 +97,7 @@
           </div>
         </article>
         <!-- おいしいお食事処 -->
-        <article class="about-item">
+        <article id="food" class="about-item">
           <div class="about-img">
             <img src="images/food01.png" alt="美味しそうな出来立て定食の写真" />
           </div>
@@ -149,10 +155,12 @@
             </div>
             <div class="reviews-text">
               <p>
-                50代・男性・大阪市 <br />「平日にふらっと立ち寄りましたが
-                館内が落ち着いた雰囲気でとても静か。
-                １人でも気兼ねなく利用できるので
-                また仕事帰りに立ち寄りたいと思います。」
+                50代・男性・大阪市 <br /><span class="reviews-space"
+                  >「平日にふらっと立ち寄りましたが
+                  館内が落ち着いた雰囲気でとても静か。
+                  １人でも気兼ねなく利用できるので
+                  また仕事帰りに立ち寄りたいと思います。」
+                </span>
               </p>
             </div>
           </article>
@@ -177,7 +185,7 @@
     </main>
 
     <!-- ご利用案内ボタン -->
-    <aside class="btn-wrapper">
+    <aside id="access" class="btn-wrapper">
       <a href="#" class="bt">ご利用案内</a>
     </aside>
 

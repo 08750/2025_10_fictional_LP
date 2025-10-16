@@ -1,6 +1,14 @@
+html,
+body {
+  overflow-x: hidden;
+}
+//////////////
 header {
   background-color: $header-footer-color;
   font-family: #{$body-font};
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
 }
 .header-logo img {
   display: block;
@@ -9,9 +17,6 @@ header {
 .header-logo {
   width: 100px;
   height: 100px;
-  min-width: 100px;
-  min-height: 100px;
-  margin-right: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,71 +25,89 @@ header {
 .header-wrapper {
   display: flex;
   align-items: center;
-  width: 1280px;
+  justify-content: space-between;
+  // width: 1280px;
+  // margin: 0 auto;
   height: 169px;
-  width: 100vw;
-  max-width: none;
+  padding: 0 40px 0 20px;
+  box-sizing: border-box;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .header-title h1 {
-  white-space: nowrap;
   font-size: 36px;
   font-weight: normal;
-  margin: 0%;
-  padding-right: 140px;
+  margin: 0;
+  white-space: nowrap;
 }
 
 //ナビゲーション
 .header-nav {
   display: flex;
-  a {
-    white-space: nowrap;
-    font-size: 36px;
-    font-family: "Zen Maru Gothic", sans-serif;
-    font-weight: normal;
-    margin: 0%;
-  }
 
   li {
-    border-right: 2px solid #000000;
+    border-right: 2px solid #000;
     padding: 2px 8px;
     &:last-child {
       border-right: none;
     }
+  }
+
+  a {
+    font-size: 36px;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: normal;
+    white-space: nowrap;
+    margin: 0;
+    text-decoration: none;
   }
 }
 
 @media (max-width: 768px) {
   .header-wrapper {
     flex-direction: column;
+    align-items: center;
     height: auto;
     padding: 16px;
-    text-align: center;
+  }
+
+  .header-left {
+    justify-content: center;
   }
 
   .header-logo {
     width: 80px;
     height: 80px;
-    margin: 0 auto 12px;
+    margin-bottom: 12px;
   }
 
   .header-title h1 {
     font-size: 24px;
-    padding-right: 0;
+    text-align: center;
     margin-bottom: 12px;
   }
 
   .header-nav {
     flex-direction: column;
     align-items: center;
-
-    a {
-      font-size: 20px;
-    }
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
 
     li {
       border-right: none;
       padding: 4px 0;
+      text-align: center;
+    }
+
+    a {
+      font-size: 18px;
+      display: inline-block;
     }
   }
 }

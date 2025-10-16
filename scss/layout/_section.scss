@@ -1,16 +1,21 @@
-//ファーストビュー
+html,
+body {
+  overflow-x: hidden;
+}
+
+/////////////ファーストビュー
 main {
   font-family: #{$body-font};
 }
 .content01 {
   position: relative;
-  width: 100vw;
+  width: 100%;
   max-width: none;
   margin: 0;
 }
 
 .content01 img {
-  width: 100%;
+  width: 50%;
   height: auto;
   display: block;
 }
@@ -19,7 +24,7 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); //中央に配置
   text-align: center;
   color: white;
   z-index: 1;
@@ -36,7 +41,37 @@ main {
   margin: 8px 0 0;
 }
 
-//コンセプト説明
+//////////ファーストビューレスポンシブ///////
+@media (max-width: 768px) {
+  .concept {
+    padding: 40px 20px;
+  }
+
+  .concept-title h2 {
+    font-size: 28px;
+  }
+
+  .concept-img {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .concept-text p {
+    font-size: 18px;
+  }
+
+  .section_title {
+    font-size: 26px !important;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}
+
+///////////////////コンセプト説明/////////////
 .concept {
   display: flex;
   flex-direction: column;
@@ -54,7 +89,7 @@ main {
 .concept-title {
   padding: 62px;
   h2 {
-    font-size: 48px;
+    font-size: clamp(20px, 4vw, 48px);
     white-space: nowrap;
     color: $heading-color;
     border-bottom: 4px solid $heading-color;
@@ -67,8 +102,32 @@ main {
 
   font-size: 24px;
 }
+////////////コンセプト説明レスポンシブ////////////////
+@media (max-width: 768px) {
+  .concept {
+    padding: 50px 50px;
+  }
 
-//施設紹介
+  .concept-title h2 {
+    font-size: 22px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .concept-img {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .concept-text p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    text-align: center;
+  }
+}
+//////////////施設紹介////////////
 .about {
   display: flex;
   flex-direction: column;
@@ -79,6 +138,7 @@ main {
 .about-title {
   font-size: 48px;
   color: $text-color;
+  margin-top: 130px;
 }
 
 //デコレーションライン
@@ -104,7 +164,7 @@ body {
 }
 .about-item {
   position: relative;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -115,7 +175,7 @@ body {
 }
 .about-img {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 447px;
   // overflow: hidden;
 }
@@ -183,13 +243,51 @@ body {
   color: $frametext-color;
   font-weight: 500;
 }
+////////////施設紹介レスポンシブ//////////////////
+@media screen and (max-width: 768px) {
+  //デコレーションライン
+  .about-line {
+    width: 145px;
+    height: 15px;
+    margin-bottom: 48px;
+  }
 
-//温泉紹介
+  //施設紹介
+  .about-title {
+    font-size: 22px;
+  }
+  //波のimg
+  .about-img {
+    height: 250px;
+  }
+
+  .frame-text,
+  .frameleft-text {
+    width: 100%;
+    max-width: 100%;
+    height: 50%;
+    padding: 20px;
+    left: 0;
+  }
+
+  .frame-text h3,
+  .frameleft-text h3 {
+    font-size: 18px;
+    font-weight: 450;
+  }
+
+  .frame-text p,
+  .frameleft-text p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+} ///////////////温泉紹介///////////
 .onsen-title {
   text-align: center;
   font-size: 48px;
   font-weight: 500;
   color: $frametext-color;
+  margin-top: 130px;
 }
 
 // デコレーションライン
@@ -269,10 +367,36 @@ body {
   font-size: 24px;
   font-weight: 500;
   color: $text-color;
-  margin: 30px 0;
+
+  margin-top: 28px;
   line-height: 1.8;
 }
+////////////温泉紹介レスポンシブ/////////////////
+@media screen and (max-width: 768px) {
+  .onsen-items {
+    flex-direction: column;
+    gap: 30px;
+  }
 
+  .onsen-item {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .onsen-img img,
+  .onsen-img02 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .onsen-subtitle {
+    font-size: 24px;
+  }
+
+  .onsen-text {
+    font-size: 16px;
+  }
+}
 /////////////////////////お客様の声///////////////////////
 
 .reviews {
@@ -280,6 +404,7 @@ body {
   margin: 0 auto;
   padding: 0;
   text-align: center;
+  margin-top: 130px;
 }
 
 .reviews-header {
@@ -371,9 +496,37 @@ body {
 .reviews-text p {
   font-size: 20px;
   line-height: 1.6;
-  margin: 20px;
+  margin: 0px;
 }
 
 .reviews-space {
-  padding-top: px;
+  display: block;
+  margin-top: 10px;
+}
+
+//////////お客様の声レスポンシブ///////////
+@media screen and (max-width: 768px) {
+  .reviews-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .reviewswoman-item {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .reviewswoman-img,
+  .reviewsman-img img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+
+  .reviews-text p {
+    font-size: 16px;
+    margin: 15px 0;
+  }
 }

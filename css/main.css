@@ -101,9 +101,17 @@ hr {
   margin: 1em 0;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 header {
   background-color: #f6c200;
   font-family: Zen Maru Gothic, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 .header-logo img {
@@ -114,9 +122,6 @@ header {
 .header-logo {
   width: 100px;
   height: 100px;
-  min-width: 100px;
-  min-height: 100px;
-  margin-right: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,80 +130,99 @@ header {
 .header-wrapper {
   display: flex;
   align-items: center;
-  width: 1280px;
+  justify-content: space-between;
   height: 169px;
-  width: 100vw;
-  max-width: none;
+  padding: 0 40px 0 20px;
+  box-sizing: border-box;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .header-title h1 {
-  white-space: nowrap;
   font-size: 36px;
   font-weight: normal;
-  margin: 0%;
-  padding-right: 140px;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .header-nav {
   display: flex;
 }
-.header-nav a {
-  white-space: nowrap;
-  font-size: 36px;
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-weight: normal;
-  margin: 0%;
-}
 .header-nav li {
-  border-right: 2px solid #000000;
+  border-right: 2px solid #000;
   padding: 2px 8px;
 }
 .header-nav li:last-child {
   border-right: none;
 }
+.header-nav a {
+  font-size: 36px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: normal;
+  white-space: nowrap;
+  margin: 0;
+  text-decoration: none;
+}
 
 @media (max-width: 768px) {
   .header-wrapper {
     flex-direction: column;
+    align-items: center;
     height: auto;
     padding: 16px;
-    text-align: center;
+  }
+  .header-left {
+    justify-content: center;
   }
   .header-logo {
     width: 80px;
     height: 80px;
-    margin: 0 auto 12px;
+    margin-bottom: 12px;
   }
   .header-title h1 {
     font-size: 24px;
-    padding-right: 0;
+    text-align: center;
     margin-bottom: 12px;
   }
   .header-nav {
     flex-direction: column;
     align-items: center;
-  }
-  .header-nav a {
-    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
   }
   .header-nav li {
     border-right: none;
     padding: 4px 0;
+    text-align: center;
+  }
+  .header-nav a {
+    font-size: 18px;
+    display: inline-block;
   }
 }
+html,
+body {
+  overflow-x: hidden;
+}
+
 main {
   font-family: Zen Maru Gothic, sans-serif;
 }
 
 .content01 {
   position: relative;
-  width: 100vw;
+  width: 100%;
   max-width: none;
   margin: 0;
 }
 
 .content01 img {
-  width: 100%;
+  width: 50%;
   height: auto;
   display: block;
 }
@@ -224,6 +248,29 @@ main {
   margin: 8px 0 0;
 }
 
+@media (max-width: 768px) {
+  .concept {
+    padding: 40px 20px;
+  }
+  .concept-title h2 {
+    font-size: 28px;
+  }
+  .concept-img {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .concept-text p {
+    font-size: 18px;
+  }
+  .section_title {
+    font-size: 26px !important;
+    white-space: nowrap;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
+}
 .concept {
   display: flex;
   flex-direction: column;
@@ -243,7 +290,7 @@ main {
   padding: 62px;
 }
 .concept-title h2 {
-  font-size: 48px;
+  font-size: clamp(20px, 4vw, 48px);
   white-space: nowrap;
   color: #004955;
   border-bottom: 4px solid #004955;
@@ -255,6 +302,27 @@ main {
   font-size: 24px;
 }
 
+@media (max-width: 768px) {
+  .concept {
+    padding: 50px 50px;
+  }
+  .concept-title h2 {
+    font-size: 22px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .concept-img {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .concept-text p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    text-align: center;
+  }
+}
 .about {
   display: flex;
   flex-direction: column;
@@ -265,6 +333,7 @@ main {
 .about-title {
   font-size: 48px;
   color: #333;
+  margin-top: 130px;
 }
 
 .about-line {
@@ -287,7 +356,7 @@ body {
 
 .about-item {
   position: relative;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -299,7 +368,7 @@ body {
 
 .about-img {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 447px;
 }
 
@@ -365,11 +434,43 @@ body {
   font-weight: 500;
 }
 
+@media screen and (max-width: 768px) {
+  .about-line {
+    width: 145px;
+    height: 15px;
+    margin-bottom: 48px;
+  }
+  .about-title {
+    font-size: 22px;
+  }
+  .about-img {
+    height: 250px;
+  }
+  .frame-text,
+  .frameleft-text {
+    width: 100%;
+    max-width: 100%;
+    height: 50%;
+    padding: 20px;
+    left: 0;
+  }
+  .frame-text h3,
+  .frameleft-text h3 {
+    font-size: 18px;
+    font-weight: 450;
+  }
+  .frame-text p,
+  .frameleft-text p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
 .onsen-title {
   text-align: center;
   font-size: 48px;
   font-weight: 500;
   color: #1a3557;
+  margin-top: 130px;
 }
 
 .onsen-line {
@@ -451,15 +552,37 @@ body {
   font-size: 24px;
   font-weight: 500;
   color: #333;
-  margin: 30px 0;
+  margin-top: 28px;
   line-height: 1.8;
 }
 
+@media screen and (max-width: 768px) {
+  .onsen-items {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .onsen-item {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .onsen-img img,
+  .onsen-img02 img {
+    width: 100%;
+    height: auto;
+  }
+  .onsen-subtitle {
+    font-size: 24px;
+  }
+  .onsen-text {
+    font-size: 16px;
+  }
+}
 .reviews {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
   text-align: center;
+  margin-top: 130px;
 }
 
 .reviews-header {
@@ -549,12 +672,45 @@ body {
 .reviews-text p {
   font-size: 20px;
   line-height: 1.6;
-  margin: 20px;
+  margin: 0px;
+}
+
+.reviews-space {
+  display: block;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .reviews-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .reviewswoman-item {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+  .reviewswoman-img,
+  .reviewsman-img img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+  .reviews-text p {
+    font-size: 16px;
+    margin: 15px 0;
+  }
+}
+html,
+body {
+  overflow-x: hidden;
 }
 
 footer {
   background-color: #f6c200;
   font-family: Zen Maru Gothic, sans-serif;
+  margin-top: 100px;
 }
 
 .footer-wrapper {
@@ -612,9 +768,50 @@ footer {
   margin-bottom: 50px;
 }
 
+@media screen and (max-width: 768px) {
+  .footer-wrapper {
+    gap: 15px;
+    padding: 20px 10px;
+  }
+  .footer-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-logo {
+    width: 80px;
+    height: 80px;
+  }
+  .footer-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .footer-contact {
+    font-size: 16px;
+  }
+  .footer-contact .phone {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  .footer-copy {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .footer-icon img {
+    width: 40px;
+    height: auto;
+    margin-top: 10px;
+  }
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
 .btn-wrapper {
   text-align: center;
   padding: 149px;
+  margin-top: 100px;
 }
 
 .bt {
@@ -630,6 +827,18 @@ footer {
   margin: 0px;
 }
 
+@media screen and (max-width: 768px) {
+  .btn-wrapper {
+    padding: 80px 10px;
+  }
+  .bt {
+    font-size: 28px;
+    padding: 20px 40px;
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+}
 body {
   background-color: #faf5e6;
 }/*# sourceMappingURL=main.css.map */

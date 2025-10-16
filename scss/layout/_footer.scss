@@ -1,6 +1,12 @@
+html,
+body {
+  overflow-x: hidden;
+}
+///////////
 footer {
   background-color: $header-footer-color;
   font-family: #{$body-font};
+  margin-top: 100px;
 }
 
 .footer-wrapper {
@@ -56,4 +62,47 @@ footer {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 50px;
+}
+//////////フッターレスポンシブ////////////////
+@media screen and (max-width: 768px) {
+  .footer-wrapper {
+    gap: 15px;
+    padding: 20px 10px;
+  }
+
+  .footer-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .footer-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .footer-contact {
+    font-size: 16px;
+  }
+
+  .footer-contact .phone {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .footer-copy {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .footer-icon img {
+    width: 40px;
+    height: auto;
+    margin-top: 10px;
+  }
 }
