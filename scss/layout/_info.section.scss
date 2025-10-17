@@ -1,0 +1,267 @@
+body {
+  background: $bg-color;
+  margin: 0;
+  color: $text-color;
+  line-height: 1.8;
+  font-family: $body-font;
+}
+
+main {
+  padding: 0 160px;
+}
+
+//////営業時間////////
+.info h2 {
+  position: relative;
+  font-size: 36px;
+  font-weight: 500;
+  color: $frametext-color;
+  padding-left: 25px; // 丸の分だけスペース
+  margin-bottom: 8px;
+  margin-top: 51px;
+
+  // 黄色丸
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background: $header-footer-color;
+    border-radius: 50%;
+  }
+}
+
+.info p {
+  //   text-align: center;
+  margin-left: 240px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.info ul {
+  //   text-align: center;
+  margin-left: 250px;
+  list-style: none;
+  padding: 0;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+//////////クーポン//////////////
+.coupon {
+  width: 80%;
+  max-width: 901px;
+  aspect-ratio: 901 / 547;
+
+  background: $framebg-color;
+  border-radius: 12px;
+  border: 2px solid $header-footer-color;
+  text-align: center;
+  padding: 25px 20px;
+  color: $frametext-color;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 160px;
+  box-sizing: border-box;
+  margin: 160px auto 25px;
+}
+
+.coupon p {
+  font-size: 36px;
+  font-weight: 300;
+}
+.coupon h3 {
+  margin-top: 0;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+//小さくなる時のボタン気になる時間あれば/
+.line-btn {
+  display: inline-block;
+  background: #00c300;
+  color: #000;
+  text-decoration: none;
+  padding: 17px 80px;
+  border-radius: 50px;
+  font-weight: bold;
+  margin: 15px 0;
+  font-size: 30px;
+}
+
+.note {
+  font-size: 13px;
+  color: $frametext-color;
+  line-height: 1.6;
+}
+////////////////
+
+///////////アクセス//////////////////
+.access h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: $heading-color;
+  position: static;
+  text-align: center;
+  padding-left: 0;
+  margin-bottom: 60px;
+  margin-top: 100px;
+
+  &::before {
+    display: none; // 黄色の棒を消す
+  }
+}
+
+/////地図と住所 //////
+.access-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 77px;
+  margin: 15px auto 0;
+  max-width: 1200px;
+  width: 90%;
+}
+
+/////地図画像//////
+.map {
+  width: 50%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #0000001a;
+}
+
+//////住所部分 //////
+.access-info {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 920px) {
+  .coupon {
+    width: 90%;
+    height: auto;
+    margin-top: 80px;
+    padding: 20px 15px;
+  }
+}
+
+/* 幅900px以下 */
+@media screen and (max-width: 900px) {
+  main {
+    padding: 0 50px;
+  }
+
+  .line-btn {
+    transform: scale(0.9);
+  }
+}
+
+/* 幅600px以下 */
+@media screen and (max-width: 920px) {
+  .coupon {
+    width: 90%;
+    height: auto;
+    margin-top: 80px;
+    padding: 20px 15px;
+  }
+}
+
+/* 幅900px以下 */
+@media screen and (max-width: 900px) {
+  main {
+    padding: 0 50px;
+  }
+
+  .line-btn {
+    transform: scale(0.9);
+  }
+}
+
+/* 幅600px以下（スマホ） */
+@media screen and (max-width: 600px) {
+  main {
+    padding: 0 20px;
+  }
+
+  /* 見出しサイズ調整 */
+  .info h2,
+  .access h2 {
+    font-size: 28px;
+  }
+
+  /* クーポン */
+  .coupon h3 {
+    font-size: 28px;
+  }
+  .coupon p {
+    font-size: 20px;
+  }
+
+  /* 文章・リスト */
+  .info p,
+  .info ul {
+    font-size: 18px;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  /* アクセス住所 */
+  .access-info {
+    font-size: 16px;
+  }
+
+  /* アクセス地図縦並び */
+  .access-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* ボタン */
+  .line-btn {
+    transform: scale(0.8);
+    padding: 12px 60px;
+    font-size: 24px;
+  }
+}
+
+/* 幅400px以下（iPhone14） */
+@media screen and (max-width: 400px) {
+  /* 見出し */
+  .info h2,
+  .access h2 {
+    font-size: 24px;
+  }
+
+  /* クーポン */
+  .coupon h3 {
+    font-size: 24px;
+  }
+  .coupon p {
+    font-size: 16px;
+  }
+
+  /* 文章・リスト */
+  .info p,
+  .info ul {
+    font-size: 16px;
+  }
+
+  /* アクセス住所 */
+  .access-info {
+    font-size: 14px;
+  }
+
+  /* ボタン */
+  .line-btn {
+    transform: scale(0.7);
+    padding: 10px 50px;
+    font-size: 20px;
+  }
+}

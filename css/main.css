@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* base/_ress.scss */
 /* Box sizing */
 html {
@@ -218,15 +219,17 @@ main {
 
 .content01 {
   position: relative;
-  width: 100%;
+  width: calc(100% + 320px); /* main の左右padding 160px × 2 */
+  margin-left: -160px; /* main の左paddingを打ち消す */
   max-width: none;
-  margin: 0;
 }
 
 .content01 img {
   width: 100%;
   height: auto;
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .firstview_text {
@@ -329,7 +332,10 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch; /* ← center だと子が中央に寄るので stretch に変更 */
+  width: 100vw; /* ビューポート幅いっぱい */
+  margin: 0;
+  padding: 0;
 }
 
 .about-title {
@@ -358,8 +364,9 @@ body {
 
 .about-item {
   position: relative;
-  width: 100%;
-  overflow: hidden;
+  width: 100%; /* vw ではなく親幅いっぱい */
+  margin: 0;
+  padding: 0;
 }
 
 .about-title {
@@ -369,9 +376,9 @@ body {
 }
 
 .about-img {
-  position: relative;
   width: 100%;
-  height: 447px;
+  height: 447px; /* お好みで変更 */
+  overflow: hidden;
 }
 
 .about-img img {
@@ -533,21 +540,15 @@ body {
 }
 
 .onsen-subtitle {
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: 500;
   margin: 10px 0;
   margin-bottom: 30px;
   border-bottom: 3px solid #004955;
-  display: block;
+  display: inline-block;
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 30px;
-}
-
-.onsen-subtitle {
-  font-size: 32px;
-  font-weight: 500;
-  display: inline-block;
-  color: #004955;
 }
 
 .onsen-text {
@@ -567,6 +568,10 @@ body {
     height: 15px;
     margin-bottom: 48px;
   }
+  .onsen-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+  }
   .onsen-items {
     flex-direction: column;
     gap: 30px;
@@ -579,9 +584,6 @@ body {
   .onsen-img02 img {
     width: 100%;
     height: auto;
-  }
-  .onsen-subtitle {
-    font-size: 24px;
   }
   .onsen-text {
     font-size: 16px;
@@ -691,6 +693,14 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .reviews-header h2.reviews-title {
+    font-size: 22px;
+  }
+  .reviews-line {
+    width: 145px;
+    height: 15px;
+    margin-bottom: 48px;
+  }
   .reviews-list {
     flex-direction: column;
     align-items: center;
@@ -849,12 +859,459 @@ body {
   }
   .bt {
     font-size: 28px;
-    padding: 20px 40px;
-    width: 90%;
+    padding: 10px 40px;
+    width: 60%;
     max-width: 400px;
     box-sizing: border-box;
   }
 }
+html,
 body {
-  background-color: #faf5e6;
+  overflow-x: hidden;
+}
+
+footer {
+  background-color: #f6c200;
+  font-family: Zen Maru Gothic, sans-serif;
+  margin-top: 100px;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.footer-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+.footer-title {
+  font-size: 40px;
+  line-height: 1;
+  color: white;
+}
+
+.footer-contact {
+  color: white;
+  font-size: 24px;
+}
+
+.footer-contact .phone {
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: 500;
+  color: white;
+}
+
+.footer-icon img {
+  width: 352px;
+  height: 79px;
+}
+
+.footer-copy {
+  color: #1a3557;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-wrapper {
+    gap: 15px;
+    padding: 20px 10px;
+  }
+  .footer-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .footer-logo {
+    width: 100px;
+    height: 100px;
+  }
+  .footer-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .footer-contact {
+    font-size: 16px;
+  }
+  .footer-contact .phone {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  .footer-copy {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .footer-icon img {
+    width: 200px;
+    height: 50px;
+  }
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #f6c200;
+  font-family: Zen Maru Gothic, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.header-logo img {
+  display: block;
+  height: auto;
+}
+
+.header-logo {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 169px;
+  padding: 0 40px 0 20px;
+  box-sizing: border-box;
+  gap: 140px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-title h1 {
+  font-size: 36px;
+  font-weight: normal;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.header-nav {
+  display: flex;
+}
+.header-nav li {
+  border-right: 2px solid #000;
+  padding: 2px 8px;
+}
+.header-nav li:last-child {
+  border-right: none;
+}
+.header-nav a {
+  font-size: 36px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: normal;
+  white-space: nowrap;
+  margin: 0;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header-wrapper {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 16px;
+    gap: 0px;
+  }
+  .header-left {
+    justify-content: center;
+  }
+  .header-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+  }
+  .header-title h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .header-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+  }
+  .header-nav li {
+    border-right: none;
+    padding: 4px 0;
+    text-align: center;
+  }
+  .header-nav a {
+    font-size: 18px;
+    display: inline-block;
+  }
+}
+body {
+  background: #faf5e6;
+  margin: 0;
+  color: #333;
+  line-height: 1.8;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+main {
+  padding: 0 160px;
+}
+
+.info h2 {
+  position: relative;
+  font-size: 36px;
+  font-weight: 500;
+  color: #1a3557;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  margin-top: 51px;
+}
+.info h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  background: #f6c200;
+  border-radius: 50%;
+}
+
+.info p {
+  margin-left: 240px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.info ul {
+  margin-left: 250px;
+  list-style: none;
+  padding: 0;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.coupon {
+  width: 80%;
+  max-width: 901px;
+  aspect-ratio: 901/547;
+  background: #fffef9;
+  border-radius: 12px;
+  border: 2px solid #f6c200;
+  text-align: center;
+  padding: 25px 20px;
+  color: #1a3557;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 160px;
+  box-sizing: border-box;
+  margin: 160px auto 25px;
+}
+
+.coupon p {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.coupon h3 {
+  margin-top: 0;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.line-btn {
+  display: inline-block;
+  background: #00c300;
+  color: #000;
+  text-decoration: none;
+  padding: 17px 80px;
+  border-radius: 50px;
+  font-weight: bold;
+  margin: 15px 0;
+  font-size: 30px;
+}
+
+.note {
+  font-size: 13px;
+  color: #1a3557;
+  line-height: 1.6;
+}
+
+.access h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #004955;
+  position: static;
+  text-align: center;
+  padding-left: 0;
+  margin-bottom: 60px;
+  margin-top: 100px;
+}
+.access h2::before {
+  display: none;
+}
+
+.access-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 77px;
+  margin: 15px auto 0;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.map {
+  width: 50%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1019607843);
+}
+
+.access-info {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 920px) {
+  .coupon {
+    width: 90%;
+    height: auto;
+    margin-top: 80px;
+    padding: 20px 15px;
+  }
+}
+/* 幅900px以下 */
+@media screen and (max-width: 900px) {
+  main {
+    padding: 0 50px;
+  }
+  .line-btn {
+    transform: scale(0.9);
+  }
+}
+/* 幅600px以下 */
+@media screen and (max-width: 920px) {
+  .coupon {
+    width: 90%;
+    height: auto;
+    margin-top: 80px;
+    padding: 20px 15px;
+  }
+}
+/* 幅900px以下 */
+@media screen and (max-width: 900px) {
+  main {
+    padding: 0 50px;
+  }
+  .line-btn {
+    transform: scale(0.9);
+  }
+}
+/* 幅600px以下（スマホ） */
+@media screen and (max-width: 600px) {
+  main {
+    padding: 0 20px;
+  }
+  /* 見出しサイズ調整 */
+  .info h2,
+  .access h2 {
+    font-size: 28px;
+  }
+  /* クーポン */
+  .coupon h3 {
+    font-size: 28px;
+  }
+  .coupon p {
+    font-size: 20px;
+  }
+  /* 文章・リスト */
+  .info p,
+  .info ul {
+    font-size: 18px;
+    text-align: center;
+    margin-left: 0;
+  }
+  /* アクセス住所 */
+  .access-info {
+    font-size: 16px;
+  }
+  /* アクセス地図縦並び */
+  .access-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  /* ボタン */
+  .line-btn {
+    transform: scale(0.8);
+    padding: 12px 60px;
+    font-size: 24px;
+  }
+}
+/* 幅400px以下（iPhone14） */
+@media screen and (max-width: 400px) {
+  /* 見出し */
+  .info h2,
+  .access h2 {
+    font-size: 24px;
+  }
+  /* クーポン */
+  .coupon h3 {
+    font-size: 24px;
+  }
+  .coupon p {
+    font-size: 16px;
+  }
+  /* 文章・リスト */
+  .info p,
+  .info ul {
+    font-size: 16px;
+  }
+  /* アクセス住所 */
+  .access-info {
+    font-size: 14px;
+  }
+  /* ボタン */
+  .line-btn {
+    transform: scale(0.7);
+    padding: 10px 50px;
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=main.css.map */

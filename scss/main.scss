@@ -1,12 +1,15 @@
 // main.scss
 @import "base/ress";
 @import "utils/vendors";
+
+///////温泉LP/////////
 @import "layout/header";
 @import "layout/section";
 @import "layout/footer";
 @import "layout/aside";
 @import "components/button";
 
-body {
-  background-color: $bg-color;
-}
+////////ご利用案内///////
+@import "layout/info.footer";
+@import "layout/info.header";
+@import "layout/info.section";

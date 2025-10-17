@@ -7,17 +7,24 @@ body {
 main {
   font-family: #{$body-font};
 }
+// .content01 {
+//   position: relative;
+//   width: 100%;
+//   max-width: none;
+//   margin: 0;
+// }
 .content01 {
   position: relative;
-  width: 100%;
+  width: calc(100% + 320px); /* main の左右padding 160px × 2 */
+  margin-left: -160px; /* main の左paddingを打ち消す */
   max-width: none;
-  margin: 0;
 }
 
 .content01 img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
 .firstview_text {
@@ -128,11 +135,23 @@ main {
   }
 }
 //////////////施設紹介////////////
+// .about {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100vw; /* 親もビューポート幅いっぱい */
+//   margin: 0; /* 中央寄せの余白を消す */
+//   padding: 0;
+// }
 .about {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch; /* ← center だと子が中央に寄るので stretch に変更 */
+  width: 100vw; /* ビューポート幅いっぱい */
+  margin: 0;
+  padding: 0;
 }
 
 .about-title {
@@ -162,31 +181,48 @@ body {
   margin: 0;
   padding: 0;
 }
+// .about-item {
+//   position: relative;
+//   width: 100vw;
+//   overflow: hidden;
+// }
 .about-item {
   position: relative;
-  width: 100%;
-  overflow: hidden;
+  width: 100%; /* vw ではなく親幅いっぱい */
+  margin: 0;
+  padding: 0;
 }
 
+//
 .about-title {
   color: $frametext-color;
   font-size: 48px;
   font-weight: 500;
 }
+// .about-img {
+//   position: relative;
+//   width: 100vw;
+//   height: 447px;
+//   overflow: hidden;
+// }
 .about-img {
-  position: relative;
   width: 100%;
-  height: 447px;
-  // overflow: hidden;
+  height: 447px; /* お好みで変更 */
+  overflow: hidden;
 }
 
+// .about-img img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   display: block;
+// }
 .about-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
 .frame-text {
   position: absolute;
   bottom: 0;
@@ -347,20 +383,14 @@ body {
 }
 
 .onsen-subtitle {
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: 500;
   margin: 10px 0;
   margin-bottom: 30px;
   border-bottom: 3px solid $heading-color;
-  display: block;
+  display: inline-block;
   width: fit-content;
   margin-bottom: 30px;
-}
-
-.onsen-subtitle {
-  font-size: 32px;
-  font-weight: 500;
-  display: inline-block;
-  color: $heading-color;
 }
 
 .onsen-text {
@@ -373,13 +403,20 @@ body {
 }
 ////////////温泉紹介レスポンシブ/////////////////
 @media screen and (max-width: 768px) {
+  ////温泉紹介//
   .onsen-title {
     font-size: 22px;
   }
+  //デコレーションライン//
   .onsen-line {
     width: 145px;
     height: 15px;
     margin-bottom: 48px;
+  }
+
+  .onsen-subtitle {
+    font-size: 16px;
+    font-weight: 300;
   }
   .onsen-items {
     flex-direction: column;
@@ -395,10 +432,6 @@ body {
   .onsen-img02 img {
     width: 100%;
     height: auto;
-  }
-
-  .onsen-subtitle {
-    font-size: 24px;
   }
 
   .onsen-text {
@@ -514,6 +547,15 @@ body {
 
 //////////お客様の声レスポンシブ///////////
 @media screen and (max-width: 768px) {
+  .reviews-header h2.reviews-title {
+    font-size: 22px;
+  }
+
+  .reviews-line {
+    width: 145px;
+    height: 15px;
+    margin-bottom: 48px;
+  }
   .reviews-list {
     flex-direction: column;
     align-items: center;
