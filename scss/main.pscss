@@ -1,0 +1,30 @@
+// main.scss
+// @use "base/ress";
+// utils/vendors を読み込む
+// @use "utils/vendors";
+
+// // 温泉LP
+// @use "layout/header";
+// @use "layout/section";
+// @use "layout/footer";
+// @use "layout/aside";
+
+// // ご利用案内
+// @use "components/info.footer";
+// @use "components/info.header";
+// @use "components/info.section";
+// main.scss
+
+// ここからすべて @use で書く
+// @use "utils/vendors";
+
+// // 温泉LP
+// @use "layout/header";
+// @use "layout/section";
+// @use "layout/footer";
+// @use "layout/aside";
+
+// // ご利用案内
+// @use "components/info.footer";
+// @use "components/info.header";
+// @use "components/info.section";
