@@ -202,14 +202,14 @@ main {
   font-size: 24px;
 }
 
-@media screen and (max-width: 768px) {
-  .section_title {
-    font-size: 26px;
-  }
-  .subtitle {
-    font-size: 20px;
-  }
+.section_title {
+  font-size: 28px;
 }
+
+.subtitle {
+  font-size: 16px;
+}
+
 .about {
   display: flex;
   flex-direction: column;
@@ -323,13 +323,6 @@ body {
 @media screen and (max-width: 768px) {
   .about-img {
     height: 250px;
-  }
-  .about-title {
-    font-size: 26px;
-  }
-  .about-line {
-    width: 150px;
-    height: 20px;
   }
   .frame-text,
   .frameleft-text {
@@ -458,13 +451,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .onsen-title {
-    font-size: 26px;
-  }
-  .onsen-line {
-    width: 150px;
-    height: 20px;
-  }
   .onsen-items {
     flex-direction: column;
     gap: 30px; /* カード間の余白調整 */
@@ -587,13 +573,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .reviews-header h2.reviews-title {
-    font-size: 26px;
-  }
-  .reviews-line {
-    width: 150px;
-    height: 20px;
-  }
   .reviews-list {
     flex-direction: column;
     align-items: center;
@@ -827,9 +806,9 @@ header {
   text-decoration: none;
 }
 
-/* ハンバーガー */
+/* ハンバーガーボタン */
 .hamburger {
-  display: none;
+  display: none; /* PCでは非表示 */
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -1357,4 +1336,4 @@ body {
     padding: 10px 50px;
     font-size: 20px;
   }
-}/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=mian.css.map */

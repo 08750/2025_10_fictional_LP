@@ -1,37 +1,47 @@
+// ファーストビュー
+
 html,
 body {
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
-
-/////////////ファーストビュー
 main {
   font-family: #{$body-font};
 }
-// .content01 {
-//   position: relative;
-//   width: 100%;
-//   max-width: none;
-//   margin: 0;
-// }
+
+.concept {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 84px 0; // 上下84px、左右0に変更
+}
+
 .content01 {
   position: relative;
-  width: calc(100% + 320px); /* main の左右padding 160px × 2 */
-  margin-left: -160px; /* main の左paddingを打ち消す */
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.concept-img {
+  width: 90%;
+  max-width: 763px;
+  height: auto;
+  padding: 0;
 }
 
 .content01 img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
 }
 
 .firstview_text {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); //中央に配置
+  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
   z-index: 1;
@@ -48,37 +58,16 @@ main {
   margin: 8px 0 0;
 }
 
-//////////ファーストビューレスポンシブ///////
-@media (max-width: 768px) {
-  .concept {
-    padding: 40px 20px;
-  }
-
-  .concept-title h2 {
-    font-size: 28px;
-  }
-
-  .concept-img {
-    width: 100%;
-    height: auto;
-    padding: 0;
-  }
-
-  .concept-text p {
-    font-size: 18px;
-  }
-
+////////ファーストビューメディアクエリ////////////
+@media screen and (max-width: 768px) {
   .section_title {
-    font-size: 26px !important;
-    white-space: nowrap;
+    font-size: 16px;
   }
-
   .subtitle {
     font-size: 16px;
   }
 }
-
-///////////////////コンセプト説明/////////////
+//コンセプト説明
 .concept {
   display: flex;
   flex-direction: column;
@@ -96,10 +85,12 @@ main {
 .concept-title {
   padding: 62px;
   h2 {
-    font-size: clamp(20px, 4vw, 48px);
+    font-size: 48px;
     white-space: nowrap;
     color: $heading-color;
     border-bottom: 4px solid $heading-color;
+    font-size: clamp(20px, 4vw, 48px); //メディアクエリなしで大きさ変えれる
+    line-height: 1.4;
   }
 }
 
@@ -109,55 +100,29 @@ main {
 
   font-size: 24px;
 }
-////////////コンセプト説明レスポンシブ////////////////
-@media (max-width: 768px) {
-  .concept {
-    padding: 50px 50px;
-  }
 
-  .concept-title h2 {
-    font-size: 22px;
-    text-align: center;
-    white-space: nowrap;
-  }
+/////////////コンセプトメディアクエリ/////////
 
-  .concept-img {
-    width: 100%;
-    height: auto;
-    padding: 0;
+@media screen and (max-width: 768px) {
+  .section_title {
+    font-size: 26px;
   }
-
-  .concept-text p {
-    font-size: 16px;
-    margin-bottom: 30px;
-    margin-top: -30px;
-    text-align: center;
+  .subtitle {
+    font-size: 20px;
   }
 }
-//////////////施設紹介////////////
-// .about {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100vw; /* 親もビューポート幅いっぱい */
-//   margin: 0; /* 中央寄せの余白を消す */
-//   padding: 0;
-// }
+
+///////////////////施設紹介////////////////////
 .about {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch; /* ← center だと子が中央に寄るので stretch に変更 */
-  width: 100vw; /* ビューポート幅いっぱい */
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
 
 .about-title {
   font-size: 48px;
   color: $text-color;
-  margin-top: 130px;
 }
 
 //デコレーションライン
@@ -175,54 +140,37 @@ main {
 
 //施設紹介内容
 
-//露天風呂とお食事処
+////露天風呂とお食事処///
 html,
 body {
   margin: 0;
   padding: 0;
 }
-// .about-item {
-//   position: relative;
-//   width: 100vw;
-//   overflow: hidden;
-// }
 .about-item {
   position: relative;
-  width: 100%; /* vw ではなく親幅いっぱい */
-  margin: 0;
-  padding: 0;
+  width: 100vw;
+  overflow: hidden;
 }
 
-//
 .about-title {
   color: $frametext-color;
   font-size: 48px;
   font-weight: 500;
 }
-// .about-img {
-//   position: relative;
-//   width: 100vw;
-//   height: 447px;
-//   overflow: hidden;
-// }
 .about-img {
-  width: 100%;
-  height: 447px; /* お好みで変更 */
-  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 447px;
+  // overflow: hidden;
 }
 
-// .about-img img {
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   display: block;
-// }
 .about-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+
 .frame-text {
   position: absolute;
   bottom: 0;
@@ -279,51 +227,69 @@ body {
   color: $frametext-color;
   font-weight: 500;
 }
-////////////施設紹介レスポンシブ//////////////////
+
+////////////////施設紹介メディアクエリ///////////////////////
 @media screen and (max-width: 768px) {
-  //デコレーションライン
-  .about-line {
-    width: 145px;
-    height: 15px;
-    margin-bottom: 48px;
+  .about-img {
+    height: 250px;
+  }
+  .about-title {
+    font-size: 26px;
   }
 
-  //施設紹介
-  .about-title {
-    font-size: 22px;
+  .about-line {
+    width: 150px;
+    height: 20px;
   }
-  //波のimg
+  .frame-text,
+  .frameleft-text {
+    width: 100%; // 画面端まで広げる
+    max-width: 100%; // 最大幅を解除
+    height: 50%;
+    padding: 20px;
+    left: 0;
+    transform: none; // translateXは不要
+  }
+
+  .frame-text h3,
+  .frameleft-text h3 {
+    font-size: 20px;
+  }
+
+  .frame-text p,
+  .frameleft-text p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .about-img {
     height: 250px;
   }
 
   .frame-text,
   .frameleft-text {
-    width: 100%;
-    max-width: 100%;
     height: 50%;
-    padding: 20px;
-    left: 0;
+    padding: 15px;
   }
 
   .frame-text h3,
   .frameleft-text h3 {
-    font-size: 18px;
-    font-weight: 450;
+    font-size: 20px;
   }
 
   .frame-text p,
   .frameleft-text p {
     font-size: 14px;
-    font-weight: 300;
   }
-} ///////////////温泉紹介///////////
+}
+
+//////////////////////////////温泉紹介////////////////////////
 .onsen-title {
   text-align: center;
   font-size: 48px;
   font-weight: 500;
   color: $frametext-color;
-  margin-top: 130px;
 }
 
 // デコレーションライン
@@ -383,61 +349,66 @@ body {
 }
 
 .onsen-subtitle {
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 24px;
   margin: 10px 0;
   margin-bottom: 30px;
   border-bottom: 3px solid $heading-color;
-  display: inline-block;
+  display: block;
   width: fit-content;
   margin-bottom: 30px;
+}
+
+.onsen-subtitle {
+  font-size: 32px;
+  font-weight: 500;
+  display: inline-block;
+  color: $heading-color;
 }
 
 .onsen-text {
   font-size: 24px;
   font-weight: 500;
   color: $text-color;
-
-  margin-top: 28px;
+  margin: 30px 0;
   line-height: 1.8;
 }
-////////////温泉紹介レスポンシブ/////////////////
+
+///////////////////温泉紹介メディアクエリ/////////////////
 @media screen and (max-width: 768px) {
-  ////温泉紹介//
   .onsen-title {
-    font-size: 22px;
-  }
-  //デコレーションライン//
-  .onsen-line {
-    width: 145px;
-    height: 15px;
-    margin-bottom: 48px;
+    font-size: 26px;
   }
 
-  .onsen-subtitle {
-    font-size: 16px;
-    font-weight: 300;
+  .onsen-line {
+    width: 150px;
+    height: 20px;
   }
+
   .onsen-items {
     flex-direction: column;
-    gap: 30px;
+    gap: 30px; /* カード間の余白調整 */
   }
 
   .onsen-item {
-    width: 100%;
+    width: 100%; /* 1列に */
     margin: 0 auto;
   }
 
   .onsen-img img,
   .onsen-img02 img {
-    width: 100%;
-    height: auto;
+    width: 100%; // スマホ幅に合わせて横幅調整
+    height: auto; // 高さ自動
+  }
+
+  .onsen-subtitle {
+    font-size: 24px; // 小さめに調整
   }
 
   .onsen-text {
-    font-size: 16px;
+    font-size: 16px; // 読みやすく調整
   }
 }
+
 /////////////////////////お客様の声///////////////////////
 
 .reviews {
@@ -445,7 +416,6 @@ body {
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  margin-top: 130px;
 }
 
 .reviews-header {
@@ -460,7 +430,7 @@ body {
 
 //デコレーションライン
 .reviews-line {
-  width: 300px;
+  width: 355px;
   height: 35px;
   margin: 0 auto;
 }
@@ -537,25 +507,23 @@ body {
 .reviews-text p {
   font-size: 20px;
   line-height: 1.6;
-  margin: 0px;
+  margin: 20px;
 }
 
 .reviews-space {
-  display: block;
-  margin-top: 10px;
+  padding-top: px;
 }
 
-//////////お客様の声レスポンシブ///////////
+///////////////お客様の声メディアクエリ///////////////////
 @media screen and (max-width: 768px) {
   .reviews-header h2.reviews-title {
-    font-size: 22px;
+    font-size: 26px;
+  }
+  .reviews-line {
+    width: 150px;
+    height: 20px;
   }
 
-  .reviews-line {
-    width: 145px;
-    height: 15px;
-    margin-bottom: 48px;
-  }
   .reviews-list {
     flex-direction: column;
     align-items: center;
@@ -568,11 +536,10 @@ body {
     padding: 15px;
   }
 
-  .reviewswoman-img,
+  .reviewswoman-img img,
   .reviewsman-img img {
     width: 100%;
     height: auto;
-    max-height: 200px;
   }
 
   .reviews-text p {

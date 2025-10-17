@@ -9,6 +9,7 @@ header {
   width: 100%;
   box-sizing: border-box;
   padding: 0;
+  position: relative;
 }
 .header-logo img {
   display: block;
@@ -50,7 +51,7 @@ header {
 //ナビゲーション
 .header-nav {
   display: flex;
-
+  z-index: 1000;
   li {
     border-right: 2px solid #000;
     padding: 2px 8px;
@@ -67,6 +68,27 @@ header {
     margin: 0;
     text-decoration: none;
   }
+}
+
+/* ハンバーガー */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 2px;
 }
 
 @media (max-width: 768px) {
@@ -111,5 +133,27 @@ header {
       font-size: 18px;
       display: inline-block;
     }
+  }
+}
+/* スマホ用に表示 */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+    z-index: 2000;
+  }
+  .header-nav {
+    display: none !important; /* 最初は非表示 */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px; /* ヘッダーの高さに合わせる */
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    z-index: 1000;
+  }
+  .header-nav.active {
+    display: flex !important;
   }
 }

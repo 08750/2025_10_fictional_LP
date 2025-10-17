@@ -6,7 +6,7 @@ body {
   font-family: $body-font;
 }
 
-main {
+.page-info {
   padding: 0 160px;
 }
 
@@ -152,7 +152,7 @@ main {
 
 /* 幅900px以下 */
 @media screen and (max-width: 900px) {
-  main {
+  main .page-info {
     padding: 0 50px;
   }
 
@@ -173,7 +173,7 @@ main {
 
 /* 幅900px以下 */
 @media screen and (max-width: 900px) {
-  main {
+  main .page-info {
     padding: 0 50px;
   }
 
@@ -184,7 +184,7 @@ main {
 
 /* 幅600px以下（スマホ） */
 @media screen and (max-width: 600px) {
-  main {
+  main .page-info {
     padding: 0 20px;
   }
 
