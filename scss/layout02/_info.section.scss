@@ -1,0 +1,272 @@
+body {
+  background: $bg-color;
+  margin: 0;
+  color: $text-color;
+  line-height: 1.8;
+  font-family: $body-font;
+}
+
+.page-info {
+  padding: 0 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+//////営業時間////////
+.infobox {
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* ← 各 .info の間に40pxの隙間を追加 */
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap; /* 💡 PC時は折り返さない */
+  gap: 60px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.info h2 {
+  position: relative;
+  font-size: 36px;
+  font-weight: 500;
+  color: $frametext-color;
+  padding-left: 35px;
+  white-space: nowrap;
+  margin: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background: $header-footer-color;
+    border-radius: 50%;
+  }
+}
+
+.info p {
+  text-align: left;
+  margin-left: 240px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+/* 3番目（岩盤浴セット）だけ変更する */
+.info:nth-of-type(3) p {
+  margin-left: 170px;
+}
+
+//////////クーポン//////////////
+.coupon {
+  width: 80%;
+  max-width: 901px;
+  background: $framebg-color;
+  border-radius: 12px;
+  border: 2px solid $header-footer-color;
+  text-align: center;
+  padding: 25px 20px;
+  color: $frametext-color;
+  margin: 160px auto 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coupon p {
+  font-size: 28px;
+  font-weight: 300;
+}
+.coupon h3 {
+  margin-top: 0;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+//小さくなる時のボタン気になる時間あれば/
+.line-btn {
+  display: inline-block;
+  background: #00c300;
+  color: #000;
+  text-decoration: none;
+  padding: 17px 80px;
+  border-radius: 50px;
+  font-weight: bold;
+  margin: 15px 0;
+  font-size: 30px;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: keep-all;
+  text-align: center;
+  transition: all 0.3s ease; /* 💡スムーズな縮小 */
+}
+
+.note {
+  font-size: 13px;
+  color: $frametext-color;
+  line-height: 1.6;
+}
+////////////////
+
+///////////アクセス//////////////////
+.access h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: $heading-color;
+  position: static;
+  text-align: center;
+  margin: 100px 0 60px;
+}
+
+/////地図と住所 //////
+.access-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 77px;
+  margin: 15px auto 0;
+  max-width: 1200px;
+  width: 90%;
+}
+
+/////地図画像//////
+.map {
+  width: 45%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #0000001a;
+}
+
+//////住所部分 //////
+.access-info {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 768px) {
+  .page-info {
+    padding: 0 30px;
+  }
+
+  /* 横並びを維持しつつ、フォントと余白を縮小 */
+  .info {
+    flex-direction: column; /* 💡 幅が狭くなったら縦積み */
+    align-items: flex-start;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .info h2 {
+    font-size: 26px;
+    padding-left: 30px;
+  }
+
+  .info p {
+    font-size: 18px;
+    white-space: nowrap; /* 💡 横並びキープ */
+  }
+
+  .info:nth-of-type(3) p {
+    margin-left: 240px;
+    // text-align: left; /* 必要に応じて調整 */
+  }
+
+  .line-btn {
+    padding: 14px 50px;
+    font-size: 22px; /* 💡文字サイズ縮小 */
+  }
+  @media screen and (max-width: 480px) {
+    .line-btn {
+      padding: 12px 25px;
+      font-size: 16px; /* 💡さらに小さく */
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .info h2 {
+      font-size: 22px;
+    }
+    .info p {
+      font-size: 16px;
+    }
+  }
+
+  .coupon {
+    width: 90%;
+    padding: 20px;
+    margin-top: 80px;
+  }
+
+  .coupon h3 {
+    font-size: 26px;
+  }
+
+  .coupon p {
+    font-size: 18px;
+  }
+
+  .line-btn {
+    transform: none;
+    padding: 14px 40px;
+    font-size: 22px;
+  }
+
+  .access-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .access-info {
+    font-size: 16px;
+  }
+}
+
+/* --- 400px以下--- */
+@media screen and (max-width: 400px) {
+  .info h2 {
+    font-size: 22px;
+  }
+  .info p {
+    font-size: 16px;
+    margin-left: 0;
+    white-space: normal;
+  }
+  .info:nth-of-type(3) p {
+    margin-left: 0; /* ← 特別処理もリセット */
+  }
+
+  .coupon h3 {
+    font-size: 22px;
+  }
+  .coupon p {
+    font-size: 16px;
+  }
+
+  .line-btn {
+    transform: scale(0.75);
+    padding: 10px 40px;
+    font-size: 18px;
+  }
+
+  .line-btn {
+    padding: 12px 25px; /* 💡 さらに縮める */
+    font-size: 18px;
+  }
+}

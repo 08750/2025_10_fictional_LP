@@ -1154,7 +1154,30 @@ body {
 }
 
 .page-info {
-  padding: 0 160px;
+  padding: 0 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+.infobox {
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* ← 各 .info の間に40pxの隙間を追加 */
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap; /* 💡 PC時は折り返さない */
+  gap: 60px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info h2 {
@@ -1162,9 +1185,9 @@ body {
   font-size: 36px;
   font-weight: 500;
   color: #1a3557;
-  padding-left: 25px;
-  margin-bottom: 8px;
-  margin-top: 51px;
+  padding-left: 35px;
+  white-space: nowrap;
+  margin: 0;
 }
 .info h2::before {
   content: "";
@@ -1179,38 +1202,37 @@ body {
 }
 
 .info p {
+  text-align: left;
   margin-left: 240px;
   font-size: 30px;
   font-weight: 500;
 }
 
-.info ul {
-  margin-left: 250px;
-  list-style: none;
-  padding: 0;
-  font-weight: 500;
-  font-size: 30px;
+/* 3番目（岩盤浴セット）だけ変更する */
+.info:nth-of-type(3) p {
+  margin-left: 170px;
 }
 
 .coupon {
   width: 80%;
   max-width: 901px;
-  aspect-ratio: 901/547;
   background: #fffef9;
   border-radius: 12px;
   border: 2px solid #f6c200;
   text-align: center;
   padding: 25px 20px;
   color: #1a3557;
-  margin-bottom: 25px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  margin-top: 160px;
-  box-sizing: border-box;
   margin: 160px auto 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .coupon p {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 300;
 }
 
@@ -1230,6 +1252,11 @@ body {
   font-weight: bold;
   margin: 15px 0;
   font-size: 30px;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: keep-all;
+  text-align: center;
+  transition: all 0.3s ease; /* 💡スムーズな縮小 */
 }
 
 .note {
@@ -1244,12 +1271,7 @@ body {
   color: #004955;
   position: static;
   text-align: center;
-  padding-left: 0;
-  margin-bottom: 60px;
-  margin-top: 100px;
-}
-.access h2::before {
-  display: none;
+  margin: 100px 0 60px;
 }
 
 .access-content {
@@ -1262,7 +1284,7 @@ body {
 }
 
 .map {
-  width: 50%;
+  width: 45%;
   max-width: 350px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1019607843);
@@ -1275,110 +1297,100 @@ body {
   line-height: 1.8;
 }
 
-@media screen and (max-width: 920px) {
-  .coupon {
-    width: 90%;
-    height: auto;
-    margin-top: 80px;
-    padding: 20px 15px;
+@media screen and (max-width: 768px) {
+  .page-info {
+    padding: 0 30px;
   }
-}
-/* 幅900px以下 */
-@media screen and (max-width: 900px) {
-  main .page-info {
-    padding: 0 50px;
-  }
-  .line-btn {
-    transform: scale(0.9);
-  }
-}
-/* 幅600px以下 */
-@media screen and (max-width: 920px) {
-  .coupon {
-    width: 90%;
-    height: auto;
-    margin-top: 80px;
-    padding: 20px 15px;
-  }
-}
-/* 幅900px以下 */
-@media screen and (max-width: 900px) {
-  main .page-info {
-    padding: 0 50px;
-  }
-  .line-btn {
-    transform: scale(0.9);
-  }
-}
-/* 幅600px以下（スマホ） */
-@media screen and (max-width: 600px) {
-  main .page-info {
-    padding: 0 20px;
-  }
-  /* 見出しサイズ調整 */
-  .info h2,
-  .access h2 {
-    font-size: 28px;
-  }
-  /* クーポン */
-  .coupon h3 {
-    font-size: 28px;
-  }
-  .coupon p {
-    font-size: 20px;
-  }
-  /* 文章・リスト */
-  .info p,
-  .info ul {
-    font-size: 18px;
+  /* 横並びを維持しつつ、フォントと余白を縮小 */
+  .info {
+    flex-direction: column; /* 💡 幅が狭くなったら縦積み */
+    align-items: flex-start;
+    gap: 10px;
     text-align: center;
-    margin-left: 0;
   }
-  /* アクセス住所 */
-  .access-info {
+  .info h2 {
+    font-size: 26px;
+    padding-left: 30px;
+  }
+  .info p {
+    font-size: 18px;
+    white-space: nowrap; /* 💡 横並びキープ */
+  }
+  .info:nth-of-type(3) p {
+    margin-left: 240px;
+  }
+  .line-btn {
+    padding: 14px 50px;
+    font-size: 22px; /* 💡文字サイズ縮小 */
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 480px) {
+  .line-btn {
+    padding: 12px 25px;
+    font-size: 16px; /* 💡さらに小さく */
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 400px) {
+  .info h2 {
+    font-size: 22px;
+  }
+  .info p {
     font-size: 16px;
   }
-  /* アクセス地図縦並び */
+}
+@media screen and (max-width: 768px) {
+  .coupon {
+    width: 90%;
+    padding: 20px;
+    margin-top: 80px;
+  }
+  .coupon h3 {
+    font-size: 26px;
+  }
+  .coupon p {
+    font-size: 18px;
+  }
+  .line-btn {
+    transform: none;
+    padding: 14px 40px;
+    font-size: 22px;
+  }
   .access-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 20px;
   }
-  /* ボタン */
-  .line-btn {
-    transform: scale(0.8);
-    padding: 12px 60px;
-    font-size: 24px;
+  .access-info {
+    font-size: 16px;
   }
 }
-/* 幅400px以下（iPhone14） */
+/* --- 400px以下--- */
 @media screen and (max-width: 400px) {
-  /* 見出し */
-  .info h2,
-  .access h2 {
-    font-size: 24px;
+  .info h2 {
+    font-size: 22px;
   }
-  /* クーポン */
+  .info p {
+    font-size: 16px;
+    margin-left: 0;
+    white-space: normal;
+  }
+  .info:nth-of-type(3) p {
+    margin-left: 0; /* ← 特別処理もリセット */
+  }
   .coupon h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
   .coupon p {
     font-size: 16px;
   }
-  /* 文章・リスト */
-  .info p,
-  .info ul {
-    font-size: 16px;
-  }
-  /* アクセス住所 */
-  .access-info {
-    font-size: 14px;
-  }
-  /* ボタン */
   .line-btn {
-    transform: scale(0.7);
-    padding: 10px 50px;
-    font-size: 20px;
+    transform: scale(0.75);
+    padding: 10px 40px;
+    font-size: 18px;
+  }
+  .line-btn {
+    padding: 12px 25px; /* 💡 さらに縮める */
+    font-size: 18px;
   }
 }/*# sourceMappingURL=main.css.map */
